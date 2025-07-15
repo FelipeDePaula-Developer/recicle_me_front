@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="" />
+    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="Criando telas e dando funcionalidade">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/auth/login-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/collection-points/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/collection-points/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/collection-points/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/collection-points/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/materials/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/materials/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/register-collection-point/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register-collection-point/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collection-point-details-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collection-point-register-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-point-register-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collection-points-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login-page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/main-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/materials-catalog-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/materials-catalog-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/signup-page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,22 +45,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/felipe/IdeaProjects/EarthSea/EarthSeaFront",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "ts.external.directory.path": "/home/felipe/IdeaProjects/recicle_me_front/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/felipe/IdeaProjects/recicle_me_front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/felipe/IdeaProjects/recicle_me_front/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/components/main_pages" />
+      <recent name="$PROJECT_DIR$/components/auth" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -73,7 +104,15 @@
       <option name="presentableId" value="Default" />
       <updated>1750725754863</updated>
       <workItem from="1750725755884" duration="1767000" />
-      <workItem from="1750732483830" duration="1000000" />
+      <workItem from="1750732483830" duration="1494000" />
+      <workItem from="1750822283438" duration="200000" />
+      <workItem from="1750902446239" duration="892000" />
+      <workItem from="1750904884522" duration="3863000" />
+      <workItem from="1750991901043" duration="1634000" />
+      <workItem from="1751937457613" duration="1833000" />
+      <workItem from="1752109460069" duration="307000" />
+      <workItem from="1752285828565" duration="5636000" />
+      <workItem from="1752543844310" duration="2434000" />
     </task>
     <servers />
   </component>
@@ -84,5 +123,9 @@
         <option value="$PROJECT_DIR$/next.config.mjs" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Criando telas e dando funcionalidade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criando telas e dando funcionalidade" />
   </component>
 </project>

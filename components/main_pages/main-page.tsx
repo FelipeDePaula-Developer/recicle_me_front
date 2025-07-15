@@ -17,7 +17,7 @@ export default function MainPage() {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-600 hover:text-gray-800 transition-colors">
+            <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition-colors">
               Início
             </Link>
             <Link href="/collection-points" className="text-gray-600 hover:text-gray-800 transition-colors">
@@ -28,6 +28,9 @@ export default function MainPage() {
             </Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
               Sobre Nós
+            </Link>
+            <Link href="/" className="text-gray-600 hover:text-gray-800 transition-colors">
+              Logout
             </Link>
             <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg">Começar</Button>
           </div>

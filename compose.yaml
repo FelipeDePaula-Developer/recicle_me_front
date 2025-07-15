@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  recicle_me_front:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+volumes:
+  postgresql:  # Define um volume nomeado para persistência do banco de dados
