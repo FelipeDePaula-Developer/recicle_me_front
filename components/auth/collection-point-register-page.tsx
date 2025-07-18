@@ -10,6 +10,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Recycle, ArrowLeft, MapPin, Bell } from "lucide-react"
 import { useState } from "react"
+import Cookies from "js-cookie"
+import jwt_decode, {JwtPayload} from "jwt-decode"
 
 export default function CollectionPointRegisterPage() {
   const [formData, setFormData] = useState({
@@ -34,6 +36,7 @@ export default function CollectionPointRegisterPage() {
   const [selectedWasteTypes, setSelectedWasteTypes] = useState<string[]>([])
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isLoadingCep, setIsLoadingCep] = useState(false)
+  const [responseError, setResponseError] = useState<string | null>(null)
 
   const wasteTypes = [
     { id: "ELE", name: "Eletrônicos", description: "Computadores, celulares, tablets" },
@@ -123,91 +126,138 @@ export default function CollectionPointRegisterPage() {
   const validateForm = () => {
     const newErrors: Record<string, string> = {}
 
-    if (!formData.cep) {
-      newErrors.cep = "CEP é obrigatório"
-    } else if (formData.cep.replace(/\D/g, "").length !== 8) {
-      newErrors.cep = "CEP deve ter 8 dígitos"
-    }
+    if (!formData.cep) newErrors.cep = "CEP é obrigatório"
+    if (!formData.logradouro) newErrors.logradouro = "Logradouro é obrigatório"
+    if (!formData.bairro) newErrors.bairro = "Bairro é obrigatório"
+    if (!formData.cidade) newErrors.cidade = "Cidade é obrigatória"
+    if (!formData.estado) newErrors.estado = "Estado é obrigatório"
+    if (selectedWasteTypes.length === 0) newErrors.wasteTypes = "Selecione ao menos um tipo de resíduo"
 
-    if (!formData.logradouro) {
-      newErrors.logradouro = "Logradouro é obrigatório"
-    }
-
-    if (!formData.bairro) {
-      newErrors.bairro = "Bairro é obrigatório"
-    }
-
-    if (!formData.cidade) {
-      newErrors.cidade = "Cidade é obrigatória"
-    }
-
-    if (!formData.estado) {
-      newErrors.estado = "Estado é obrigatório"
-    }
-
-    if (selectedWasteTypes.length === 0) {
-      newErrors.wasteTypes = "Selecione pelo menos um tipo de resíduo"
-    }
-
-    // Adicionar após a validação dos tipos de resíduos:
-    const hasOpenDays = Object.values(operatingHours).some((day) => day.isOpen)
-    if (!hasOpenDays) {
-      newErrors.operatingHours = "Selecione pelo menos um dia de funcionamento"
-    }
-
-    // Validar horários
-    Object.entries(operatingHours).forEach(([dayKey, day]) => {
-      if (day.isOpen && day.openTime >= day.closeTime) {
-        newErrors[`${dayKey}Time`] = "Horário de abertura deve ser anterior ao fechamento"
-      }
-    })
+    const hasOpenDay = Object.values(operatingHours).some(d => d.isOpen)
+    if (!hasOpenDay) newErrors.operatingHours = "Selecione ao menos um dia de funcionamento"
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setResponseError(null)
+    setErrors({})
 
-    if (validateForm()) {
-      // Simulate userId (in real app, this would come from authentication)
-      const userId = 1
+    if (!validateForm()) return
 
-      // Create collection point payload
-      const collectionPointPayload = {
-        userId: userId,
-        cep: formData.cep.replace(/\D/g, ""), // Remove formatting
-        logradouro: formData.logradouro,
-        bairro: formData.bairro,
-        cidade: formData.cidade,
-        estado: formData.estado,
-        status: formData.status,
+    const token = localStorage.getItem("jwt")
+    if (!token) {
+      setResponseError("Usuário não autenticado.")
+      return
+    }
+
+    let userId: number
+    try {
+      const decoded = jwt_decode<JwtPayload>(token)
+      console.log("Decoded token:", decoded)
+
+      // Preferencialmente pega o 'id'; se não existir, tenta usar o 'sub'
+      if (decoded.id !== undefined) {
+        userId = decoded.id
+      } else if (decoded.sub) {
+        userId = parseInt(decoded.sub)
+      } else {
+        throw new Error("Token não contém ID válido.")
+      }
+    } catch (err) {
+      console.error("Erro ao decodificar token:", err)
+      setResponseError("Erro de autenticação.")
+      return
+    }
+
+    const fullAddress = `${formData.logradouro}, ${formData.bairro}, ${formData.cidade}, ${formData.estado}`
+    let latitude: number | null = null
+    let longitude: number | null = null
+
+    try {
+      const geoRes = await fetch(
+          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(fullAddress)}`,
+          {
+            headers: {
+              "User-Agent": "Recicle-Me (recicle-me@example.com)", // coloque um e-mail válido ou identificador
+            },
+          }
+      )
+      const geoData = await geoRes.json()
+
+      if (geoData && geoData.length > 0) {
+        latitude = parseFloat(geoData[0].lat)
+        longitude = parseFloat(geoData[0].lon)
+      } else {
+        setResponseError("Não foi possível localizar o endereço. Verifique os dados informados.")
+        return
+      }
+    } catch (error) {
+      console.error("Erro ao buscar coordenadas:", error)
+      setResponseError("Erro ao buscar coordenadas do endereço. Tente novamente.")
+      return
+    }
+
+    const payload = {
+      userId,
+      cep: formData.cep,
+      logradouro: formData.logradouro,
+      bairro: formData.bairro,
+      cidade: formData.cidade,
+      estado: formData.estado,
+      status: formData.status,
+      latitude,
+      longitude,
+      tipoColeta: {
+        tipoColetaId: 5,
+        tipoDescarte: selectedWasteTypes[0],
+      },
+      diasPontoColeta: Object.entries(operatingHours)
+          .filter(([_, v]) => v.isOpen)
+          .map(([k, v]) => ({
+            dayFlag: {
+              monday: "SEG",
+              tuesday: "TER",
+              wednesday: "QUA",
+              thursday: "QUI",
+              friday: "SEX",
+              saturday: "SAB",
+              sunday: "DOM",
+            }[k as keyof typeof operatingHours],
+            openHour: v.openTime.replace(":", ""),
+            closeHour: v.closeTime.replace(":", ""),
+          })),
+    }
+
+    try {
+      const res = await fetch("http://localhost:8080/cad/ponto_coleta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+
+      const result = await res.json()
+
+      if (!res.ok || result.status === "BAD_REQUEST") {
+        if (result.messages) {
+          const newErrors: Record<string, string> = {}
+          result.messages.forEach((msg: { field: string; message: string }) => {
+            newErrors[msg.field] = msg.message
+          })
+          setErrors(newErrors)
+        } else {
+          setResponseError("Erro ao cadastrar ponto de coleta. Tente novamente.")
+        }
+        return
       }
 
-      // Create waste types payload (assuming tipoColetaId would be returned from collection point creation)
-      const wasteTypesPayload = selectedWasteTypes.map((wasteType) => ({
-        tipoColetaId: 5, // This would be the ID returned from collection point creation
-        tipoDescarte: wasteType,
-      }))
-
-      // Adicionar após wasteTypesPayload:
-      const operatingHoursPayload = Object.entries(operatingHours)
-        .filter(([_, day]) => day.isOpen)
-        .map(([dayKey, day]) => ({
-          dayOfWeek: dayKey,
-          openTime: day.openTime,
-          closeTime: day.closeTime,
-          isOpen: day.isOpen,
-        }))
-
-      console.log("Horários de funcionamento:", operatingHoursPayload)
-
-      console.log("Dados do ponto de coleta:", collectionPointPayload)
-      console.log("Tipos de resíduos aceitos:", wasteTypesPayload)
-
-      // Simulate successful registration
       alert("Ponto de coleta cadastrado com sucesso!")
       window.location.href = "/dashboard"
+    } catch (error) {
+      console.error("Erro ao cadastrar ponto de coleta:", error)
+      setResponseError("Erro ao cadastrar ponto de coleta. Tente novamente.")
     }
   }
 
@@ -463,6 +513,10 @@ export default function CollectionPointRegisterPage() {
 
                 {errors.operatingHours && <p className="text-red-500 text-sm">{errors.operatingHours}</p>}
               </div>
+              {/* Error Message */}
+              {responseError && (
+                  <p className="text-red-500 text-sm text-center">{responseError}</p>
+              )}
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
@@ -472,6 +526,7 @@ export default function CollectionPointRegisterPage() {
                 >
                   Cadastrar Ponto de Coleta
                 </Button>
+
                 <Link href="/dashboard" className="flex-1">
                   <Button
                     type="button"

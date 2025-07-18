@@ -82,7 +82,7 @@ export default function MainPage() {
       <section className="px-6 py-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">Acesso Rápido</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Find Collection Points */}
             <Link href="/materials">
               <Card className="bg-gradient-to-br from-green-200 to-green-300 border-0 overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
@@ -123,23 +123,6 @@ export default function MainPage() {
                   <h3 className="font-semibold mb-2">Acessar Guias de Reciclagem</h3>
                   <p className="text-sm opacity-90">
                     Aprenda como descartar adequadamente diferentes tipos de resíduos.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Track Your Impact */}
-            <Card className="bg-gradient-to-br from-green-500 to-green-600 border-0 text-white overflow-hidden">
-              <CardContent className="p-6 h-48 flex flex-col justify-between">
-                <div className="flex justify-center mb-4">
-                  <div className="bg-white p-3 rounded-lg">
-                    <Leaf className="h-8 w-8 text-green-600" />
-                  </div>
-                </div>
-                <div className="text-center">
-                  <h3 className="font-semibold mb-2">Acompanhar Seu Impacto</h3>
-                  <p className="text-sm opacity-90">
-                    Monitore seus esforços de reciclagem e veja o impacto positivo que está causando.
                   </p>
                 </div>
               </CardContent>

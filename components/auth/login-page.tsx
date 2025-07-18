@@ -47,7 +47,9 @@ export default function LoginPage() {
                 throw new Error(errorMessage);
             }
 
-            const data = await response.json();
+            let ret = await response.json();
+            console.log(ret);
+            localStorage.setItem("jwt", ret.token)
             router.push("/dashboard");
         } catch (error: unknown) {
             console.error("Login error:", error);
