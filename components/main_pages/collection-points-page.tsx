@@ -2,12 +2,14 @@
 
 import Link from "next/link"
 import dynamic from "next/dynamic"
-import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Recycle, Search, ChevronUp, ChevronDown } from "lucide-react"
-import type { LatLngTuple } from "leaflet"
+import { useSearchParams } from "next/navigation"
+import React, { useEffect, useState } from "react"
+import { LatLngTuple } from "leaflet"
+
 
 // Dynamic imports for Leaflet components to avoid SSR issues
 const MapContainer = dynamic(() => import("react-leaflet").then((mod) => mod.MapContainer), {
@@ -20,6 +22,18 @@ const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), { 
 
 export default function CollectionPointsPage() {
   // Configure Leaflet icons
+  const searchParams = useSearchParams()
+  const material = searchParams.get("material") || "Vidro" // fallback para "Vidro" se não vier nada
+  const [collectionPoints, setCollectionPoints] = useState<CollectionPoint[]>([])
+  const [loading, setLoading] = useState(true)
+
+  type CollectionPoint = {
+    id: number
+    name: string
+    address: string
+    position: LatLngTuple
+  }
+
   useEffect(() => {
     const setupLeafletIcons = async () => {
       const L = await import("leaflet")
@@ -36,40 +50,34 @@ export default function CollectionPointsPage() {
       })
     }
 
-    setupLeafletIcons()
-  }, [])
+    const fetchCollectionPoints = async () => {
+      try {
+        const res = await fetch(`http://localhost:8080/pontos/list/${material}`)
+        if (!res.ok) throw new Error("Erro ao buscar pontos de coleta")
 
-  const collectionPoints: {
-    id: number
-    name: string
-    address: string
-    position: LatLngTuple
-  }[] = [
-    {
-      id: 1,
-      name: "Eco-Centro",
-      address: "Rua Verde, 123, Qualquer Cidade",
-      position: [-23.55052, -46.633308],
-    },
-    {
-      id: 2,
-      name: "Depósito de Reciclagem",
-      address: "Avenida Azul, 456, Qualquer Cidade",
-      position: [-23.55252, -46.637308],
-    },
-    {
-      id: 3,
-      name: "Centro de Gerenciamento de Resíduos",
-      address: "Estrada Vermelha, 789, Qualquer Cidade",
-      position: [-23.55452, -46.635308],
-    },
-    {
-      id: 4,
-      name: "Centro Comunitário de Reciclagem",
-      address: "Alameda Amarela, 101, Qualquer Cidade",
-      position: [-23.55652, -46.639308],
-    },
-  ]
+        const data = await res.json()
+
+        const mapped: CollectionPoint[] = data.map((item: any) => ({
+          id: item.idPontoColeta,
+          name: item.nome,
+          address: item.endereco,
+          position: [
+            parseFloat(item.geoLocalizacao[0]),
+            parseFloat(item.geoLocalizacao[1]),
+          ] as LatLngTuple,
+        }))
+
+        setCollectionPoints(mapped)
+      } catch (err) {
+        console.error(err)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    setupLeafletIcons()
+    fetchCollectionPoints()
+  }, [material])
 
   return (
       <div className="min-h-screen bg-gray-50">

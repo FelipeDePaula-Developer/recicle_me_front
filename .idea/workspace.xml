@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="add lib de mapa">
+    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="Alterando autenticação para local storage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register-collection-point/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register-collection-point/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/login-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/login-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/signup-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/signup-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/main_pages/collection-point-register-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/main_pages/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/main-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/main_pages/materials-catalog-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/materials-catalog-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/collection-points/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/collection-points/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +102,9 @@
       <workItem from="1752548560575" duration="1103000" />
       <workItem from="1752634648492" duration="1240000" />
       <workItem from="1752709635079" duration="8489000" />
-      <workItem from="1752806417228" duration="3806000" />
+      <workItem from="1752806417228" duration="3840000" />
+      <workItem from="1752942974643" duration="6002000" />
+      <workItem from="1752980456520" duration="5394000" />
     </task>
     <task id="LOCAL-00001" summary="add lib de mapa">
       <option name="closed" value="true" />
@@ -116,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752547133394</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Alterando autenticação para local storage">
+      <option name="closed" value="true" />
+      <created>1752810243766</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752810243766</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +137,7 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Criando telas e dando funcionalidade" />
     <MESSAGE value="add lib de mapa" />
-    <option name="LAST_COMMIT_MESSAGE" value="add lib de mapa" />
+    <MESSAGE value="Alterando autenticação para local storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alterando autenticação para local storage" />
   </component>
 </project>
