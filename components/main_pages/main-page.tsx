@@ -2,40 +2,13 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Recycle, Leaf, MapPin, Plus } from "lucide-react"
+import Navbar from "@/components/elements/navbar";
 
 export default function MainPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation Header */}
-      <nav className="bg-white border-b border-gray-200 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Recycle className="h-6 w-6 text-gray-800" />
-            <span className="text-xl font-semibold text-gray-800">Recicle-Me</span>
-          </div>
-
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition-colors">
-              Início
-            </Link>
-            <Link href="/collection-points" className="text-gray-600 hover:text-gray-800 transition-colors">
-              Pontos de Coleta
-            </Link>
-            <Link href="/guides" className="text-gray-600 hover:text-gray-800 transition-colors">
-              Guias
-            </Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
-              Sobre Nós
-            </Link>
-            <Link href="/" className="text-gray-600 hover:text-gray-800 transition-colors">
-              Logout
-            </Link>
-            <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg">Começar</Button>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-600 to-green-700 text-white py-20 px-6 mx-6 mt-6 rounded-2xl relative overflow-hidden">
@@ -67,12 +40,6 @@ export default function MainPage() {
             <CardContent className="p-6">
               <h3 className="text-gray-600 text-sm font-medium mb-2">Pontos de Coleta Próximos</h3>
               <p className="text-3xl font-bold text-gray-900">150+</p>
-            </CardContent>
-          </Card>
-          <Card className="bg-gray-100">
-            <CardContent className="p-6">
-              <h3 className="text-gray-600 text-sm font-medium mb-2">Guias Acessados</h3>
-              <p className="text-3xl font-bold text-gray-900">2000+</p>
             </CardContent>
           </Card>
         </div>

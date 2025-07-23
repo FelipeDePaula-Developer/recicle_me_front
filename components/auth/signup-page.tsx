@@ -158,7 +158,6 @@ export default function SignupPage() {
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/public" className="text-gray-600 hover:text-gray-800 transition-colors">Início</Link>
-              <Link href="/services" className="text-gray-600 hover:text-gray-800 transition-colors">Serviços</Link>
               <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">Sobre Nós</Link>
               <Link href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">Contato</Link>
               <Link href="/login">

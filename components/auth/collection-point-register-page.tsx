@@ -11,6 +11,7 @@ import {Checkbox} from "@/components/ui/checkbox"
 import {Recycle, ArrowLeft, MapPin, Bell} from "lucide-react"
 import {useState} from "react"
 import jwt_decode, {JwtPayload} from "jwt-decode"
+import Navbar from "@/components/elements/navbar";
 
 export default function CollectionPointRegisterPage() {
     const [formData, setFormData] = useState({
@@ -171,7 +172,7 @@ export default function CollectionPointRegisterPage() {
             return
         }
 
-        const fullAddress = `${formData.logradouro}, ${formData.bairro}, ${formData.cidade}, ${formData.estado}`
+        const fullAddress = `${formData.logradouro}, ${formData.cidade}, ${formData.estado}`
         let latitude: number | null = null
         let longitude: number | null = null
 
@@ -210,10 +211,7 @@ export default function CollectionPointRegisterPage() {
             status: formData.status,
             latitude,
             longitude,
-            tipoColeta: {
-                tipoColetaId: 5,
-                tipoDescarte: selectedWasteTypes[0],
-            },
+            tipoColeta: selectedWasteTypes.map((tipo) => ({ tipoDescarte: tipo })),
             diasPontoColeta: Object.entries(operatingHours)
                 .filter(([_, v]) => v.isOpen)
                 .map(([k, v]) => ({
@@ -253,7 +251,6 @@ export default function CollectionPointRegisterPage() {
                 return
             }
 
-            alert("Ponto de coleta cadastrado com sucesso!")
             window.location.href = "/dashboard"
         } catch (error) {
             console.error("Erro ao cadastrar ponto de coleta:", error)
@@ -264,42 +261,7 @@ export default function CollectionPointRegisterPage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Navigation Header */}
-            <nav className="bg-white border-b border-gray-200 px-6 py-4">
-                <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    {/* Logo */}
-                    <div className="flex items-center space-x-2">
-                        <Recycle className="h-6 w-6 text-gray-800"/>
-                        <span className="text-xl font-semibold text-gray-800">Recicle-Me</span>
-                    </div>
-
-                    {/* Navigation Links */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition-colors">
-                            Início
-                        </Link>
-                        <Link href="/collection-points" className="text-gray-600 hover:text-gray-800 transition-colors">
-                            Pontos de Coleta
-                        </Link>
-                        <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
-                            Sobre Nós
-                        </Link>
-                        <Link href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">
-                            Contato
-                        </Link>
-
-                        {/* Notification and Profile */}
-                        <div className="flex items-center space-x-4">
-                            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                                <Bell className="h-5 w-5 text-gray-600"/>
-                            </button>
-                            <div
-                                className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
-                                <span className="text-white text-sm font-medium">U</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* Main Content */}
             <div className="max-w-4xl mx-auto px-6 py-12">

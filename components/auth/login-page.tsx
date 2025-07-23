@@ -82,11 +82,8 @@ export default function LoginPage() {
 
                     {/* Navigation Links */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <Link href="/public" className="text-gray-600 hover:text-gray-800 transition-colors">
+                        <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition-colors">
                             Início
-                        </Link>
-                        <Link href="/services" className="text-gray-600 hover:text-gray-800 transition-colors">
-                            Serviços
                         </Link>
                         <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
                             Sobre Nós
@@ -94,9 +91,6 @@ export default function LoginPage() {
                         <Link href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">
                             Contato
                         </Link>
-                        <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg">
-                            Login
-                        </Button>
                     </div>
                 </div>
             </nav>

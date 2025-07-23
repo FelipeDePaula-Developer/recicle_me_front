@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Recycle, Bell, ChevronRight } from "lucide-react"
+import Navbar from "@/components/elements/navbar";
 
 interface DiasPontoColeta {
   [key: string]: {
@@ -57,38 +58,7 @@ export default function CollectionPointDetailsPage() {
   return (
       <div className="min-h-screen bg-gray-50">
         {/* Navigation Header */}
-        <nav className="bg-white border-b border-gray-200 px-6 py-4">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Recycle className="h-6 w-6 text-gray-800" />
-              <span className="text-xl font-semibold text-gray-800">Recicle-Me</span>
-            </div>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition-colors">
-                Início
-              </Link>
-              <Link href="/collection-points" className="text-gray-600 hover:text-gray-800 transition-colors">
-                Pontos de Coleta
-              </Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
-                Sobre Nós
-              </Link>
-              <Link href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">
-                Contato
-              </Link>
-
-              <div className="flex items-center space-x-4">
-                <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                  <Bell className="h-5 w-5 text-gray-600" />
-                </button>
-                <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-medium">U</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <Navbar />
 
         <div className="max-w-7xl mx-auto px-6 py-4">
           <nav className="flex items-center space-x-2 text-sm text-gray-500">

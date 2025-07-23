@@ -9,6 +9,7 @@ import { Recycle, Search, ChevronUp, ChevronDown } from "lucide-react"
 import { useSearchParams } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import { LatLngTuple } from "leaflet"
+import Navbar from "@/components/elements/navbar";
 
 
 // Dynamic imports for Leaflet components to avoid SSR issues
@@ -82,43 +83,7 @@ export default function CollectionPointsPage() {
   return (
       <div className="min-h-screen bg-gray-50">
         {/* Navigation Header */}
-        <nav className="bg-white border-b border-gray-200 px-6 py-4">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <Recycle className="h-6 w-6 text-gray-800" />
-              <span className="text-xl font-semibold text-gray-800">Recicle-Me</span>
-            </div>
-
-            {/* Navigation Links and Search */}
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition-colors">
-                Início
-              </Link>
-              <Link href="/services" className="text-gray-600 hover:text-gray-800 transition-colors">
-                Serviços
-              </Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
-                Sobre Nós
-              </Link>
-              <Link href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">
-                Contato
-              </Link>
-
-              {/* Search Bar */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <Input
-                    type="text"
-                    placeholder="Pesquisar"
-                    className="pl-10 pr-4 py-2 w-64 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                />
-              </div>
-
-              <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg">Começar</Button>
-            </div>
-          </div>
-        </nav>
+        <Navbar />
 
         {/* Main Content */}
         <div className="flex h-[calc(100vh-80px)]">
