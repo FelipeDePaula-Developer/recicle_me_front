@@ -162,7 +162,7 @@ export default function MaterialsCatalogPage() {
 
         {/* Back Button */}
         <div className="flex justify-start">
-          <Link href="/dashboard">
+          <Link href="/">
             <Button
               variant="outline"
               className="flex items-center space-x-2 px-6 py-3 border-gray-300 text-gray-700 hover:bg-gray-50"

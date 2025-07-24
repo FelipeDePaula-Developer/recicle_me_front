@@ -7,6 +7,7 @@ import {Label} from "@/components/ui/label"
 import {Recycle} from "lucide-react"
 import React from "react"
 import {useRouter} from "next/navigation"
+import Navbar from "@/components/elements/navbar";
 
 export default function LoginPage() {
     const router = useRouter()
@@ -27,8 +28,8 @@ export default function LoginPage() {
         try {
             const response = await fetch("http://localhost:8080/user/login", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ login, password }),
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({login, password}),
                 credentials: "include",
             });
 
@@ -50,7 +51,7 @@ export default function LoginPage() {
             let ret = await response.json();
             console.log(ret);
             localStorage.setItem("jwt", ret.token)
-            router.push("/dashboard");
+            router.push("/");
         } catch (error: unknown) {
             console.error("Login error:", error);
 
@@ -72,28 +73,7 @@ export default function LoginPage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Navigation Header */}
-            <nav className="bg-white border-b border-gray-200 px-6 py-4">
-                <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    {/* Logo */}
-                    <div className="flex items-center space-x-2">
-                        <Recycle className="h-6 w-6 text-gray-800"/>
-                        <span className="text-xl font-semibold text-gray-800">Recicle-Me</span>
-                    </div>
-
-                    {/* Navigation Links */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition-colors">
-                            Início
-                        </Link>
-                        <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
-                            Sobre Nós
-                        </Link>
-                        <Link href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">
-                            Contato
-                        </Link>
-                    </div>
-                </div>
-            </nav>
+            <Navbar/>
 
             {/* Login Form */}
             <div className="flex items-center justify-center px-6 py-16">

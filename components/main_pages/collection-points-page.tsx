@@ -105,7 +105,7 @@ export default function CollectionPointsPage() {
             {/* Collection Points List */}
             <div className="space-y-4">
               {collectionPoints.map((point) => (
-                  <Link key={point.id} href={`/collection-points/${point.id}`}>
+                  <Link key={point.id} href={`/collection-points/${point.id}`} className="block mt-4">
                     <Card className="hover:shadow-md transition-shadow cursor-pointer">
                       <CardContent className="p-4">
                         <div className="flex items-start space-x-3">

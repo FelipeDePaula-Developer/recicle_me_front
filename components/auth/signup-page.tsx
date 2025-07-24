@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Recycle, ArrowLeft } from "lucide-react"
+import Navbar from "@/components/elements/navbar";
 
 export default function SignupPage() {
   const router = useRouter()
@@ -150,22 +151,7 @@ export default function SignupPage() {
 
   return (
       <div className="min-h-screen bg-gray-50">
-        <nav className="bg-white border-b border-gray-200 px-6 py-4">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Recycle className="h-6 w-6 text-gray-800" />
-              <span className="text-xl font-semibold text-gray-800">Recicle-Me</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/public" className="text-gray-600 hover:text-gray-800 transition-colors">Início</Link>
-              <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">Sobre Nós</Link>
-              <Link href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">Contato</Link>
-              <Link href="/login">
-                <Button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg">Login</Button>
-              </Link>
-            </div>
-          </div>
-        </nav>
+        <Navbar/>
 
         <div className="flex items-center justify-center px-6 py-12">
           <div className="w-full max-w-md">

@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="Alterando autenticação para local storage">
-      <change afterPath="$PROJECT_DIR$/components/elements/navbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/logout/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/PrivateRoute.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/auth/logout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/auth/utils.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/auth/login-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/login-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/auth/signup-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/signup-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/elements/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/elements/navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/main_pages/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/main-page.tsx" afterDir="false" />
@@ -19,6 +26,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/felipe/IdeaProjects/recicle_me_front/components/elements",
+    "last_opened_file_path": "/home/felipe/IdeaProjects/recicle_me_front/components/auth",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,10 +66,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/auth" />
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/components/elements" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/dashboard" />
       <recent name="$PROJECT_DIR$/components/auth" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/components/main_pages" />
@@ -111,6 +128,7 @@
       <workItem from="1752942974643" duration="6002000" />
       <workItem from="1752980456520" duration="5394000" />
       <workItem from="1753238175357" duration="4561000" />
+      <workItem from="1753302353566" duration="9622000" />
     </task>
     <task id="LOCAL-00001" summary="add lib de mapa">
       <option name="closed" value="true" />
@@ -145,5 +163,17 @@
     <MESSAGE value="add lib de mapa" />
     <MESSAGE value="Alterando autenticação para local storage" />
     <option name="LAST_COMMIT_MESSAGE" value="Alterando autenticação para local storage" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/main_pages/main-page.tsx</url>
+          <line>2</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
