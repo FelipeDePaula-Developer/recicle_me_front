@@ -53,7 +53,8 @@ export default function MainPage() {
             <section className="px-6 py-12">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-2xl font-bold text-gray-900 mb-8">Acesso Rápido</h2>
-                    <div className={`grid gap-6 "md:grid-cols-3" ${authenticated ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
+                    <div
+                        className={`grid gap-6 "md:grid-cols-3" ${authenticated ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
                         {/* Find Collection Points */}
                         <Link href="/materials">
                             <Card
@@ -83,25 +84,27 @@ export default function MainPage() {
                         </Link>
 
                         {/* Access Recycling Guides */}
-                        <Card
-                            className="bg-gradient-to-br from-green-600 to-green-700 border-0 text-white overflow-hidden">
-                            <CardContent className="p-6 h-48 flex flex-col justify-between">
-                                <div className="flex justify-center mb-4">
-                                    <div className="relative">
-                                        <Recycle className="h-12 w-12 text-white opacity-80"/>
-                                        <Leaf className="h-6 w-6 text-green-300 absolute -top-1 -right-1"/>
+                        <Link href="/guides">
+                            <Card
+                                className="bg-gradient-to-br from-green-600 to-green-700 border-0 text-white overflow-hidden">
+                                <CardContent className="p-6 h-48 flex flex-col justify-between">
+                                    <div className="flex justify-center mb-4">
+                                        <div className="relative">
+                                            <Recycle className="h-12 w-12 text-white opacity-80"/>
+                                            <Leaf className="h-6 w-6 text-green-300 absolute -top-1 -right-1"/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="text-center">
-                                    <p className="text-xs mb-2 opacity-80">Esforço Mínimo</p>
-                                    <p className="text-xs mb-3 opacity-80">Impacto Máximo</p>
-                                    <h3 className="font-semibold mb-2">Acessar Guias de Reciclagem</h3>
-                                    <p className="text-sm opacity-90">
-                                        Aprenda como descartar adequadamente diferentes tipos de resíduos.
-                                    </p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                                    <div className="text-center">
+                                        <p className="text-xs mb-2 opacity-80">Esforço Mínimo</p>
+                                        <p className="text-xs mb-3 opacity-80">Impacto Máximo</p>
+                                        <h3 className="font-semibold mb-2">Acessar Guias de Reciclagem</h3>
+                                        <p className="text-sm opacity-90">
+                                            Aprenda como descartar adequadamente diferentes tipos de resíduos.
+                                        </p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </Link>
 
                         {authenticated && (
                             <Link href="/register-collection-point">

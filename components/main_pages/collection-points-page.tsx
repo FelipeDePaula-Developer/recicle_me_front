@@ -126,13 +126,6 @@ export default function CollectionPointsPage() {
 
           {/* Right Side - Interactive Map */}
           <div className="flex-1 relative">
-            {/* Map Search */}
-            <div className="absolute top-4 left-4 z-[1000]">
-              <div className="bg-white rounded-lg shadow-md p-3">
-                <Search className="h-5 w-5 text-gray-400" />
-              </div>
-            </div>
-
             {/* Leaflet Map */}
             <div className="w-full h-full">
               <MapContainer

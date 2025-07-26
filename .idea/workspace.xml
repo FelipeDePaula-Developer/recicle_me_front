@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="Alterando autenticação para local storage">
-      <change afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/logout/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/PrivateRoute.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/auth/logout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/auth/utils.tsx" afterDir="false" />
+    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="ajustes finos">
+      <change afterPath="$PROJECT_DIR$/app/guides/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/main_pages/guides.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/login-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/login-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/signup-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/signup-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/elements/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/elements/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/main_pages/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/main-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/main_pages/materials-catalog-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/materials-catalog-page.tsx" afterDir="false" />
@@ -48,22 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/felipe/IdeaProjects/recicle_me_front/components/auth",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "ts.external.directory.path": "/home/felipe/IdeaProjects/recicle_me_front/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/felipe/IdeaProjects/recicle_me_front/components/auth&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/felipe/IdeaProjects/recicle_me_front/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/components/auth" />
@@ -128,7 +118,8 @@
       <workItem from="1752942974643" duration="6002000" />
       <workItem from="1752980456520" duration="5394000" />
       <workItem from="1753238175357" duration="4561000" />
-      <workItem from="1753302353566" duration="9622000" />
+      <workItem from="1753302353566" duration="10273000" />
+      <workItem from="1753498513221" duration="4359000" />
     </task>
     <task id="LOCAL-00001" summary="add lib de mapa">
       <option name="closed" value="true" />
@@ -146,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752810243766</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ajustes finos">
+      <option name="closed" value="true" />
+      <created>1753327665130</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753327665130</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +161,8 @@
     <MESSAGE value="Criando telas e dando funcionalidade" />
     <MESSAGE value="add lib de mapa" />
     <MESSAGE value="Alterando autenticação para local storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alterando autenticação para local storage" />
+    <MESSAGE value="ajustes finos" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajustes finos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -170,7 +170,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/main_pages/main-page.tsx</url>
           <line>2</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
