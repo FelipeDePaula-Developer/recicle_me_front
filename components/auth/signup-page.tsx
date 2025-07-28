@@ -255,7 +255,7 @@ export default function SignupPage() {
             </Card>
 
             <div className="mt-6 text-center">
-              <Link href="/">
+              <Link href="/login">
                 <Button variant="outline" className="flex items-center space-x-2 px-6 py-3">
                   <ArrowLeft className="h-4 w-4" />
                   <span>Voltar ao Início</span>

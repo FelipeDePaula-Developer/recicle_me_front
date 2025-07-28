@@ -129,35 +129,14 @@ export default function MainPage() {
                     </div>
                 </div>
             </section>
-
-            {/* Call to Action Section */}
-            <section className="px-6 py-16 text-center">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Pronto para Fazer a Diferença?</h2>
-                    <p className="text-lg text-gray-600 mb-8">
-                        Junte-se ao Recicle-Me hoje e comece sua jornada rumo ao descarte responsável de resíduos.
-                    </p>
-                    <Button
-                        className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-medium text-lg">
-                        Saiba Mais Sobre o Recicle-Me
-                    </Button>
-                </div>
-            </section>
-
+            
             {/* Footer */}
             <footer className="bg-white border-t border-gray-200 px-6 py-8">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                         <div className="flex space-x-8">
-                            <Link href="/contact" className="text-gray-500 hover:text-gray-700 transition-colors">
-                                Fale Conosco
-                            </Link>
-                            <Link href="/privacy" className="text-gray-500 hover:text-gray-700 transition-colors">
-                                Política de Privacidade
-                            </Link>
-                            <Link href="/terms" className="text-gray-500 hover:text-gray-700 transition-colors">
-                                Termos de Serviço
-                            </Link>
+                            <p className="text-gray-500 text-sm">Feito por: Felipe de Paula Silva</p>
+                            <p className="text-gray-500 text-sm">RU: 4152747</p>
                         </div>
                         <p className="text-gray-500 text-sm">©2024 Recicle-Me. Todos os direitos reservados.</p>
                     </div>

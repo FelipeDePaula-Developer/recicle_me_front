@@ -31,10 +31,6 @@ export default function Navbar() {
                     <Link href="/about" className="text-gray-600 hover:text-gray-800 transition-colors">
                         Sobre Nós
                     </Link>
-                    <Link href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">
-                        Contato
-                    </Link>
-
                     {!authenticated ? (
                         <Link href="/login" className="text-gray-600 hover:text-gray-800 transition-colors">
                             Login

@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="ajustes finos">
-      <change afterPath="$PROJECT_DIR$/app/guides/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/main_pages/guides.tsx" afterDir="false" />
+    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="ajustes no visual">
+      <change afterPath="$PROJECT_DIR$/app/about/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/main_pages/about.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/elements/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/elements/navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/main_pages/main-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/main-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/main_pages/materials-catalog-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/materials-catalog-page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +120,8 @@
       <workItem from="1752980456520" duration="5394000" />
       <workItem from="1753238175357" duration="4561000" />
       <workItem from="1753302353566" duration="10273000" />
-      <workItem from="1753498513221" duration="4359000" />
+      <workItem from="1753498513221" duration="4601000" />
+      <workItem from="1753668811814" duration="2720000" />
     </task>
     <task id="LOCAL-00001" summary="add lib de mapa">
       <option name="closed" value="true" />
@@ -145,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753327665130</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ajustes no visual">
+      <option name="closed" value="true" />
+      <created>1753503096209</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1753503096209</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +172,8 @@
     <MESSAGE value="add lib de mapa" />
     <MESSAGE value="Alterando autenticação para local storage" />
     <MESSAGE value="ajustes finos" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajustes finos" />
+    <MESSAGE value="ajustes no visual" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajustes no visual" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

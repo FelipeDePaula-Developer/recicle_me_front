@@ -192,8 +192,7 @@ export default function CollectionPointRegisterPage() {
                 latitude = parseFloat(geoData[0].lat)
                 longitude = parseFloat(geoData[0].lon)
             } else {
-                setResponseError("Não foi possível localizar o endereço. Verifique os dados informados.")
-                return
+                alert("Não foi possível encontrar as coordenadas do ponto de coleta a localização não será exibida no mapa.")
             }
         } catch (error) {
             console.error("Erro ao buscar coordenadas:", error)

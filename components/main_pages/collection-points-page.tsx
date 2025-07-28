@@ -26,6 +26,7 @@ export default function CollectionPointsPage() {
   const searchParams = useSearchParams()
   const material = searchParams.get("material") || "Vidro" // fallback para "Vidro" se não vier nada
   const [collectionPoints, setCollectionPoints] = useState<CollectionPoint[]>([])
+  const [allPoints, setAllPoints] = useState<CollectionPoint[]>([])
   const [loading, setLoading] = useState(true)
 
   type CollectionPoint = {
@@ -58,17 +59,24 @@ export default function CollectionPointsPage() {
 
         const data = await res.json()
 
-        const mapped: CollectionPoint[] = data.map((item: any) => ({
-          id: item.idPontoColeta,
-          name: item.nome,
-          address: item.endereco,
-          position: [
-            parseFloat(item.geoLocalizacao[0]),
-            parseFloat(item.geoLocalizacao[1]),
-          ] as LatLngTuple,
-        }))
+        const allPoints: CollectionPoint[] = data.map((item: any) => {
+          const lat = parseFloat(item.geoLocalizacao?.[0])
+          const lng = parseFloat(item.geoLocalizacao?.[1])
 
-        setCollectionPoints(mapped)
+          return {
+            id: item.idPontoColeta,
+            name: item.nome,
+            address: item.endereco,
+            position: [lat, lng] as LatLngTuple,
+          }
+        })
+
+        const validPoints = allPoints.filter(
+            (point) => !isNaN(point.position[0]) && !isNaN(point.position[1])
+        )
+
+        setCollectionPoints(validPoints)
+        setAllPoints(allPoints)
       } catch (err) {
         console.error(err)
       } finally {
@@ -104,7 +112,7 @@ export default function CollectionPointsPage() {
 
             {/* Collection Points List */}
             <div className="space-y-4">
-              {collectionPoints.map((point) => (
+              {allPoints.map((point) => (
                   <Link key={point.id} href={`/collection-points/${point.id}`} className="block mt-4">
                     <Card className="hover:shadow-md transition-shadow cursor-pointer">
                       <CardContent className="p-4">
