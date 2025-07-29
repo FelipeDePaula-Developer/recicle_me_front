@@ -41,7 +41,8 @@ export default function CollectionPointDetailsPage() {
         const fetchData = async () => {
             const id = window.location.pathname.split("/").pop()
             try {
-                const res = await fetch(`http://localhost:8080/pontos/${id}`)
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL
+                const res = await fetch(`${apiUrl}/pontos/${id}`)
                 const data = await res.json()
                 setCollectionPoint(data)
             } catch (error) {

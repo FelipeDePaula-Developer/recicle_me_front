@@ -54,7 +54,8 @@ export default function CollectionPointsPage() {
 
     const fetchCollectionPoints = async () => {
       try {
-        const res = await fetch(`http://localhost:8080/pontos/list/${material}`)
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL
+        const res = await fetch(`${apiUrl}/pontos/list/${material}`)
         if (!res.ok) throw new Error("Erro ao buscar pontos de coleta")
 
         const data = await res.json()

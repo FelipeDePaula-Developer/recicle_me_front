@@ -230,7 +230,8 @@ export default function CollectionPointRegisterPage() {
         }
 
         try {
-            const res = await fetch("http://localhost:8080/cad/ponto_coleta", {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL
+            const res = await fetch(`${apiUrl}/cad/ponto_coleta`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(payload),

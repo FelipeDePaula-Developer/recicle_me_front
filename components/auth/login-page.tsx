@@ -26,7 +26,8 @@ export default function LoginPage() {
         const password = formData.get("password") as string
 
         try {
-            const response = await fetch("http://localhost:8080/user/login", {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL
+            const response = await fetch(`${apiUrl}/user/login`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({login, password}),
