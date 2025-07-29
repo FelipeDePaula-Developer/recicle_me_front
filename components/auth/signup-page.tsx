@@ -112,7 +112,7 @@ export default function SignupPage() {
 
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL
-      const response = await fetch(`${apiUrl}/user/cad`, {
+      const response = await fetch(`${apiUrl}user/cad`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),

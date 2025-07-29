@@ -115,6 +115,7 @@
       <workItem from="1753498513221" duration="4601000" />
       <workItem from="1753668811814" duration="2806000" />
       <workItem from="1753759406168" duration="566000" />
+      <workItem from="1753760375598" duration="331000" />
     </task>
     <task id="LOCAL-00001" summary="add lib de mapa">
       <option name="closed" value="true" />
@@ -164,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753759802862</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add var URL">
+      <option name="closed" value="true" />
+      <created>1753760429463</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1753760429463</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
