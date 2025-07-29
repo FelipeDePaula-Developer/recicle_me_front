@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="Finalizando projeto">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/collection-point-register-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/login-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/login-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth/signup-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/auth/signup-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-point-details-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/main_pages/collection-points-page.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="121148d9-29e7-4222-9787-7c6de0a6d2e0" name="Changes" comment="add var URL" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +114,7 @@
       <workItem from="1753302353566" duration="10273000" />
       <workItem from="1753498513221" duration="4601000" />
       <workItem from="1753668811814" duration="2806000" />
-      <workItem from="1753759406168" duration="301000" />
+      <workItem from="1753759406168" duration="566000" />
     </task>
     <task id="LOCAL-00001" summary="add lib de mapa">
       <option name="closed" value="true" />
@@ -163,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753671936324</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add var URL">
+      <option name="closed" value="true" />
+      <created>1753759802862</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753759802862</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +183,8 @@
     <MESSAGE value="ajustes finos" />
     <MESSAGE value="ajustes no visual" />
     <MESSAGE value="Finalizando projeto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalizando projeto" />
+    <MESSAGE value="add var URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="add var URL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
